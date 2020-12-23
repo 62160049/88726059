@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Multi</title>
+    
+    </head>
+
+<body>
+        <br><h1>2.Multi Program</h1>
+
+    <input tuye="text" placeholder="สูตรคูณแม่ ?" onkeyup="multii(this.value);">
+    <table border="1">
+    <tbody id="multi">
+<script>
+
+
+    function multii(n){
+        multi = document.getElementById("multi");
+        multi.innerHTML = " ";
+        table =  ``;
+       for(var i = 1; i<=12; i++)
+       {
+           table +=  `<tr>
+                        <td>${n} x ${i} = </td>
+                        <td>${n*i}</td>
+                        </tr> `
+       }
+       multi.innerHTML = table
+    }
+
+</script>
+</tbody>
+</table>
+</body>
+</head>
+</html>
