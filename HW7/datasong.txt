@@ -1,0 +1,274 @@
+ CREATE TABLE Artist (
+        BandID int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        BandName VARCHAR(100) NOT NULL,
+        Member INT NOT NULL
+        );
+
+    CREATE TABLE Style(
+        StyleID int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        StyleName VARCHAR(100) NULL
+        );
+    
+    CREATE TABLE Music(
+        MusicID int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        MusicName VARCHAR(100) NOT NULL,
+        BandID VARCHAR(100) NOT NULL REFERENCES Artist(BandID),
+        StyleID VARCHAR(100) NOT NULL REFERENCES Style(StyleID),
+        Lyrics VARCHAR(2000) NOT NULL,
+        AlbumID VARCHAR(100) NULL REFERENCES Album(AlbumID),
+        SongLenght TIME NOT NULL
+        );
+
+    CREATE TABLE Album(
+        AlbumID int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        AlbumCoverPhoto VARCHAR(100) NOT NULL,
+        AlbumName VARCHAR(100) NOT NULL,
+        BandID VARCHAR(100) NOT NULL REFERENCES Artist(BandID),
+        StyleID VARCHAR(100) NOT NULL REFERENCES Style(StyleID),
+        ReleaseYear YEAR(4) NOT NULL
+        );
+
+
+INSERT INTO Artist (BandName, Member)
+    VALUES ('Fiixd', '1');
+            ('Post malone', '1'),
+            ('BTS', '5'),
+            
+
+
+    INSERT INTO Style (StyleName)
+    VALUES ('HipHop'),
+            ('K-POP');
+
+    
+INSERT INTO Music (MusicName,BandID,StyleID,Lyrics,AlbumID,SongLenght)
+    VALUES ('อยู่ดี','1','1','aby เธอไม่ร้อง
+อย่างอแงได ้ไหม baby มันไม่พอ
+ถ้าจะมีแค่ใจ
+baby เธอก็ควรจะพอ เหอะ
+baby เธอก็ควรจะพอ เถอะ
+เพราะว่าฉันต ้องไปอยู่ดี เดินตามทางของฉัน
+อยู่ดี
+ถึงใครบอกว่ามันไม่ดี but I gotta go
+baby
+I just gotta go oh oh
+I just gotta go
+I just gotta go 
+I just gotta go
+money on my mind 
+money on my mind 
+money money money money
+on my mind
+ก่อนที่มันจะสายก่อนที่ มันจะสาย
+ฉันก็แค่อยากรวย 
+ก่อนที่ตัวฉันนั้นจะตาย','1',00:04:54'),
+('ออน','3','2','I cant understand what people are sayin
+어느 장단에 맞춰야 될지
+한 발자국 떼면 한 발자국 커지는 shadow
+잠에서 눈을 뜬 여긴 또 어디
+어쩜 서울 또 New York or Paris
+일어나니 휘청이는 몸 yeah
+Look at my feet down down
+날 닮은 그림자 자
+흔들리는 건 이놈인가
+아니면 내 작은 발끝인가 ay
+두렵잖을 리 없잖아
+다 괜찮을 리 없잖아
+그래도 I know
+서툴게 I flow
+저 까만 바람과 함께 날아
+Hey na na na
+미치지 않으려면 미쳐야 해
+Hey na na na (hey)
+나를 다 던져 이 두 쪽 세상에
+Hey na na na
+Cant hold me down cause you know Im a fighter
+제 발로 들어온 아름다운 감옥
+Find me  Im gonna live  ya
+가져와 bring the pain oh yeah
+Eh-oh 올라타봐 bring the pain oh yeah
+Rain be pourin
+Sky keep fallin
+Everyday oh na na na
+Eh-oh 가져와 bring the pain oh yeah eh
+Bring the pain oh eh
+모두 내 피와 살이 되겠지 eh oh
+Bring the pain eh oh
+ fear 방법을 알겠으니 eh
+작은 것에 breathe ah huh
+그건 어둠 속 내 산소와 빛 ah huh
+내가 나이게 하는 것들의 힘
+넘어져도 다시 일어나 scream ya ya ya ya
+넘어져도 다시 일어나 scream ya ya ya ya
+언제나 우린 그랬으니
+설령 내 무릎이 땅에 닿을지언정
+파묻히지 않는 이상
+그저 그런 해프닝쯤 될 거란 걸
+Win  matter what
+Win  matter what
+Win  matter what
+네가 뭐라던 누가 뭐라던 I dont give a uh
+I dont give a uh
+I dont give a uh yeah
+Hey na na na
+미치지 않으려면 미쳐야 해
+Hey na na na
+나를 다 던져 이 두 쪽 세상에
+Hey na na na
+I cant hold me down cause you know Im a fighter
+제 발로 들어온 아름다운 감옥
+Find me  Im gonna live  ya
+가져와 bring the pain oh yeah
+Eh-oh 올라타봐 bring the pain oh yeah
+Rain be pourin
+Sky keep fallin
+Everyday oh na na na
+Eh-oh 가져와 bring the pain oh yeah
+나의 고통이 있는 곳에
+내가 숨 쉬게 하소서 please
+My everythin my blood  tears
+Got  fears
+Im singin oh ah
+Oh Im takin over
+You should know yeah
+I cant hold me down cause you know Im a fighter
+깜깜한 심연 속 기꺼이 잠겨
+Find me  Im gonna bleed  ya
+가져와 bring the pain oh yeah
+Eh oh 올라타봐 bring the pain oh yeah
+Rain be pourin
+Sky keep fallin
+Everyday oh na na na
+Eh-oh find me  Im gonna bleed  ya
+가져와 bring the pain oh yeah
+Eh-oh 올라타봐 bring the pain oh yeah
+ that I know  just goin 
+Eh oh 가져와 bring the pain oh yeah yeah yeah','2','00:04:59'),
+ ('Circles','2','1','Oh oh oh-oh
+Oh oh oh-oh
+Oh oh oh-oh oh-oh oh-oh
+We couldnt turn around
+Til we were upside down
+Ill be the bad guy now
+But  I aint too proud
+I couldnt be there
+  I tried
+You dont believe it
+We  this 
+Seasons  our love went cold
+Feed the flame cause we cant let it 
+Run away but were running  circles
+Run away run away
+I dare you something
+Im waiting  you again
+So I dont take the blame
+Run away but we re running  circles
+Run away run away run away
+Let 
+I got a feeling that its  let 
+I say so
+I knew that this was doomed  the 
+You thought that it was special special
+But it was just the sex though the sex though
+ I still hear the echoes The echoes
+I got a feeling that its  let it  let it 
+Seasons  our love went cold
+Feed the flame cause we cant let it 
+Run away but were running  circles
+Run away run away
+I dare you  something
+Im waiting  you again
+So I dont take the blame
+Run away but were running  circles
+Run away run away run away
+Maybe you dont understand what Im going through
+Its only me
+What you got  lose
+Make up your mind tell me
+What are you gonna Its only meLet it','3','00:03:36'),
+('Awake','3','2','믿는 게 아냐 버텨보는 거야
+할 수 있는 게 나 이것뿐이라서
+머물고 싶어 더 꿈꾸고 싶어
+그래도 말야 떠날 때가 됐는걸
+Yeah its my truth woo ah Its my truth woo ah
+온통 상처투성이겠지
+But its my fate woo ah Its my fate woo ah
+그래도 발버둥치고 싶어 우
+Maybe I I can never fly
+저기 저 꽃잎들처럼 날갤 단 것처럼은 안 돼 yay
+Maybe I I cant touch the sky
+그래도 손 뻗고 싶어 달려보고 싶어 조금 더
+이 어둠 속을 그냥 걷고 또 걷고 있어
+행복했던 시간들이 내게 물었어
+너 넌 정말 괜찮은 거냐고 Oh 
+난 대답했어 아니 나는 너무 무서워
+그래도 여섯 송이 꽃을 손에 꼭 쥐고
+나 난 걷고 있을 뿐이라고 Oh 
+But its my fate wooah Its my fate woo-ah
+그래도 발버둥치고 싶어
+Maybe I I can never fly
+저기 저 꽃잎들처럼 날갤 단 것처럼은 안 돼
+Maybe I I cant touch the sky
+그래도 손 뻗고 싶어 달려보고 싶어 조금 더
+Wide awake Wide awake Wide awake
+Dont cry cry cry
+Wide awake Wide awake Wide awake
+ lie  lie  lie  lie ye
+Wide awake Wide awake Wide awake
+Dont cry Dont cry Dont cry
+Wide awake Wide awake Wide awake
+ lie lie lie
+Maybe I I can never fly
+저기 저 꽃잎들처럼 날갤 단 것처럼은 안 돼
+Maybe I I cant touch the sky
+그래도 손 뻗고 싶어 달려보고 싶어 조금 더','4','00:03:45'),
+('เคยตัว','1','1','My dream  bigger than your fucking team
+My vision bigger than your mission
+อีพ่ออีเเม่ข่อยสอนมาดี they guarantee
+บ่ฮู้อิหยังข่อยล้มลุกมาหลายที
+Stay sharp  hard vong vision
+Live  die hard vong vision
+Stay sharp  hard vong vision
+Vong vision vong vision
+ภูมิใจสัตว์เด็กยโส
+โครตจะสู้กูเเม่งโครตโส
+ตัวต่อตัวไม่ค่อยชอบโทร
+กูมีหลายเเสนหลายล้านเป็นโล
+ไม่ใช่เพราะพ่อกูมาได้เอง
+มึงชอบคิดเองเเต่กูดังเพราะเพลง
+Old school trap ถ้าไม่ชอบก็ fuck that
+มีหลาย pack ให้ react ที่กูพูดมันคือ fact yah
+ชีวิต bout stack woah ya ya ya
+เงินล้านใน backpack woah ya ya ya
+สร้อยทองไม่ค่อยมี woah ya ya ya
+ไม่จำเป็น og woah
+My dream  bigger than your fucking team
+My vision bigger than your mission
+อีพ่ออีเเม่ข่อยสอนมาดี they guarantee
+บ่ฮู้อิหยังข่อยล้มลุกมาหลายที
+Stay sharp  hard vong vision
+Live  die hard vong vision
+Stay sharp  hard vong vision
+Vong vision vong vision
+พร้อมจะตายพวกกูพร้อมจะลุย
+ใน interview ไม่ได้มีเเค่คุย
+พูดจริงทำจริงทุกครั้งที่ทำ just  เปิดซิง
+ my thing ตอนนี้ win
+กูโครตฟินเด็กยโสเเม่งขึ้นบนดิน
+กี่เดือนกี่ปียังอยู่ใน main scene
+Fuck your mainstream
+Mixing sprite  codeine
+คนเขามองมึง god เเต่ยังมาทำตัวส้นตีน
+ก้าวหน้าหลงเก้ายอด
+มาทำเยอะกูไม่ชอบ ไม่ชอบ ไม่ชอบ
+มึงหมกมุ่นไปกับไสยศาสตร์
+มึงคิดมากอย่ามา act ประหลาด
+My dream  bigger than your fucking team
+My vision bigger than your mission
+อีพ่ออีเเม่ข่อยสอนมาดี they guarantee
+บ่ฮู้อิหยังขอยลมลกมาหลายท
+Stay sharp  hard vong vision
+Live  die hard vong vision
+Stay sharp  hard vong vision
+Vong vision vong vision','5','00:02:45');
+ 
